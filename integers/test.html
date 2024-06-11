@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio and Video Player</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        
+        .audio-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+        .audio-play-icon {
+            background: url(./img/left.png) no-repeat center center;
+            background-size: cover;
+            border: none;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        
+        .video-container {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="audio-container">
+        <audio id="audio" src="./Avengers Theme-MobCup.vip.mp3"></audio>
+        <button id="audio-play-btn" class="audio-play-icon"></button>
+    </div>
+    
+    <div class="video-container">
+        <video id="video" width="320" height="240" controls>
+            <source src="your-video-file.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', (event) => {
+        const audio = document.getElementById('audio');
+        const audioPlayBtn = document.getElementById('audio-play-btn');
+    
+        audioPlayBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+    
+        const video = document.getElementById('video');
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
